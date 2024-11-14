@@ -6,7 +6,7 @@ const Router = express.Router();
 
 // creating routes
 Router.get('/', (req, res) => {
-  res.end('I am working brother!'); 
+  res.end('I am working brother!');
 });
 
 // exporting router

@@ -3,16 +3,46 @@ const mongoose = require('mongoose');
 
 // defining recipe schema
 const recipeSchema = new mongoose.Schema({
-  name: String,
-  author: String,
-  cuisine: String,
-  category: String,
-  prepTime: Number,
-  cookTime: Number,
-  ingredients: [String],
-  instructions: [String],
-  ratings: Number,
-  date: Date
+  name: {
+    type: String,
+    required: true,
+  },
+  author: {
+    id: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  },
+  cuisine: {
+    type: String,
+    required: false,
+  },
+  category: {
+    type: String,
+    required: false,
+  },
+  prepTime: {
+    type: Number,
+    required: false,
+  },
+  cookTime: {
+    type: Number,
+    required: false,
+  },
+  ingredients: {
+    type: [String],
+    required: false,
+  },
+  instructions: {
+    type: [String],
+    required: false,
+  },
+  ratings: {
+    type: Number,
+    required: false,
+  },
+  createdAt: {
+    type: Date,
+    require: true
+  }
 });
 
 // creating Recipe object
