@@ -8,7 +8,7 @@ const recipeSchema = new mongoose.Schema({
     required: true,
   },
   author: {
-    id: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   },
   cuisine: {
@@ -17,7 +17,7 @@ const recipeSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    required: false,
+    required: true,
   },
   prepTime: {
     type: Number,
